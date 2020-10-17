@@ -19,18 +19,19 @@
     Looked at W3S for the ol listing - look at loto excerise-->
 <!--Need to create two buttons 1. for go back to HTML via href link to HTML-->
 <!--Need to create 2nd button that clears the scores-->
+
+
+<!--pulled HTML from Index as ref.-->
 <div class="scores"></div>
-<h1>Scores page placeholder</h1>
-
-
-<div class="wrapper">
-    
-      <h1>Highscores</h1>
-        <!--create button-->
-        <button>Go Back</button>
-            <a href="index.HTML"></a>
+<h1>Highscores</h1>
+        <!--create buttons- the fix the ahref needs to be before the button-->
+        <a href="index.HTML"><button>Go Back</button></a>
             
-        <button type="button" onclick="handleupdateClick">Start Quiz</button>
+<!--<a href="http://stackoverflow.com"><button>Link Text</button></a>-->
+<!--my link  <a href="index.HTML"></a><button>Go Back</button> needed to removed closing a tag. -->
+<!--Link to main page works-->
+
+        <button type="button" onclick="handleupdateClick">Clear Scores</button>
         <!--Create List-->
         <ol id="highscoresLst"></ol>
 <body>
