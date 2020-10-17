@@ -1,5 +1,49 @@
 # 04-Coding-Quiz-Challenge
 Week 4 Homework - Create a Coding Quiz Challenge using JavaScript
+
+### Pseudocode
+Game Object
+50 total seconds on timer
+
+1. We need a place (object) to store those questions, answer options, answer
+1a. We need a variable to hold score
+
+2. Start Method (function)
+Initializes game
+Brings up first question, answer options
+starts a timer
+
+3. write a function to display/render question and answers
+
+4. function for a timer to start timer
+
+5. select an answer (click an answer button)
+on click event listener
+conditional
+if answer is correct
+move to next question
+add 20 points to score
+else if answer is incorrect 
+subtract time -5 seconds
+move to next question
+
+6. The game can stop if
+if the user has answered all the questions
+OR
+if the timer runs out
+THEN I can save my initials and score
+on submit, submit score function
+
+function to submit score
+
+onClick
+onSubmit
+setInterval on timer
+there's another method that goes with timers :)
+
+10.17 notes-going to but the timer in the scripts.js
+
+## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # 04 Web APIs: Code Quiz
 
 ## Your Task
