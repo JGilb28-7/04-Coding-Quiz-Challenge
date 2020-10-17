@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+  <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+<div class="logscores">
+    <!-- need to link to new page for the Highscores-->
+    <a href="scores.HTML">View Highscores</a>
+
+</div>    
+<!-- need to insert the timer-->
+<div class="timer">
+    <!-- need to link to new page for the Highscores-->
+    Timer: 
+    <span id="time">0</span>
+</div>
+
+<div class="wrapper">
+    <div id="launchscreen" class="startquiz"> 
+      <h1>BootCamp Coding Quiz 2020</h1>
+        <p>please answer the following code-related questions with in 
+           the time limit. For each incorrect answer your score will 
+           be deducted __ seconds from your score(time)</p>
+        <!--create button-->
+        <button type="button" onclick="handleupdateClick">Start Quiz</button>
+       
+</div>
+<!-- <div id="myDiv"></div>
+<div id="storageDiv"></div>
+    <button type ="button" onclick="handleupdateClick">Update Data</button>
+-->
+<!-- this would be the question in the HTML-->
+<!--<div id="empty-div"></div>-->
+<!--<div id="empty-div"></div -->
+
+<script src="./assets/questionAns.js"></script>
+<script src="./assets/script.js"></script>
+
+</body>
+</html>

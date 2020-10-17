@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    font-size: 100%;
+    font-display: auto;
+    display: block;
+    margin: 8px;
+    padding: 10%;
+    text-align: center;
+    background-color: rgb(190, 232, 238)
+}
+h1 {
+  font-weight: bold;
+}
+p {
+  font-size: 25px;
+}
+  .timer {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 20px;
+  }
+
+  .logscores {
+    position: absolute;g
+    top: 25px;
+    left: 25px;
+    font-size: 20px;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.1s;
+  }
+  
+  a:hover {
+    color: blue
+  }
+  
+  button {
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 150%;
+    background-color: black;
+    border-radius: 15px;
+    padding: 2px 10px;
+    color: white;
+    border: 25px;
+    border: cornflowerblue;
+    transition: background-color 0.1s;
+  }
+  
+  button:hover {
+    background-color: blue;
+  }
+ /* need to add .css for the list and additional buttons
+ 
+  
