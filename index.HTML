@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
+ <body>
   <div class="logscores">
     <!-- need to link to new page for the Highscores-->
     <a href="scores.HTML">View Highscores</a>
@@ -22,37 +22,38 @@
   <!-- need to insert the timer-->
   <div class="timer">
     <!-- need to link to new page for the Highscores-->
-    Timer:
+    <time>Time:</time>
     <span id="time">0</span>
   </div>
 
   <div class="wrapper">
-    <div id="launchscreen" class="startquiz"></div>
+    <div id="home-screen" class="">
       <h1>BootCamp Coding Quiz 2020</h1>
       <p>please answer the following code-related questions with in
         the time limit. For each incorrect answer your score will
-        be deducted __ seconds from your score(time)</p>
+        be deducted 10 seconds from your score(time)</p>
       
-      <!--create button-->
       <button id="start">Click to Start</button>
-
+    </div>
       <!-- need to create the questions-->
-      <div id="questionsLst" class="hide"></div>
-        <h2 id="questionDesc"></h2>
-        <div id="questionAnsLst" class="questionAnsLst"></div>
-      </div>
+    <div id="questions" class="hide">
+      <h2 id="question-title"></h2>
+        <div id="choices" class="choices"></div>
+    </div>
 
-
+    <div id="endscreen" class="hide">
+      <h2>Quiz Complete! Thank you!</h2>
+      <p>"Check out your final score"<span id="results"></span>"."</p>
+      <p> "Please enter your intials:" 
+      <input type="text" id="intials" max=3>
+      <button id="submit">Submit</button></p>
+    </div>
+    <div id="feedback"class="feedback hide"></div>
 
   </div>
 
-    <!-- <div id="myDiv"></div>
-<div id="storageDiv"></div>-->
-
-
-
-<script src="./assets/questionAns.js"></script>
-<script src="./assets/script.js"></script>
+  <script src="./assets/questionAns.js"></script>
+  <script src="./assets/script.js"></script>
 
 </body>
 </html>

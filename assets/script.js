@@ -1,40 +1,124 @@
-//Need to create varibles 
-let currentQuestionIndex = 0;
-let time = questions.length * 20;
-let timerId;
-
-let logScorcesEL = document.getElementById("logscores")
-let timerEl = document.getElementById("timer")
-let timeEL = document.getElementById("time")
-let launchScreenEl = document.getElementById("launchscreen")
-let startBtnEl = document.getElementById("start")
-let questionsLstEl = document.getElementById("questionsLst")
-let questionDescEl = document.getElementById("questionDesc")
-let questionAnsLstEl = document.getElementById("questionAnsLst")
-let startQzEL = document.getElementsByClassName("startquiz")
-let hideEL = document.getElementsByClassName("hide")
+var currentQuestionIndex = 0;
+var time = questions.length * 20;
+var timerId;
 
 
+var questionsEl = document.getElementById("questions");
+var timerEl = document.getElementById("time");
+var choicesEl = document.getElementById("choices");
+var submitBtn = document.getElementById("submit");
+var startBtn = document.getElementById("start");
+var initialsEl = document.getElementById("initials");
+var feedbackEl = document.getElementById("feedback");
 
+function startQuiz() {
+  var startScreenEl = document.getElementById("home-screen");
+  startScreenEl.setAttribute("class", "hide");
 
-//Timer used w3Schools
-/*<!-- Display the countdown timer in an element -->
-<p id="demo"></p>
+  questionsEl.removeAttribute("class");
 
-<script>
-// Update the count down every 1 second
-var x = setInterval(function() {
+  timerId = setInterval(clockTick, 1000);
 
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  timerEl.textContent = time;
 
-  // Display the result in the element with id="demo" //Need to change the id
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  getQuestion();
+}
 
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+function getQuestion() {
+  
+  var currentQuestion = questions[currentQuestionIndex];
+
+  var titleEl = document.getElementById("question-title");
+  titleEl.textContent = currentQuestion.title;
+
+  choicesEl.innerHTML = "";
+
+  currentQuestion.choices.forEach(function(choice, i) {
+    var choiceNode = document.createElement("button");
+    choiceNode.setAttribute("class", "choice");
+    choiceNode.setAttribute("value", choice);
+
+    choiceNode.textContent = i + 1 + ". " + choice;
+    choiceNode.onclick = questionClick;
+    choicesEl.appendChild(choiceNode);
+  });
+}
+
+function questionClick() {
+  if (this.value !== questions[currentQuestionIndex].answer) {
+
+    time -= 20;
+    if (time < 0) {
+      time = 0;
+    }
+    timerEl.textContent = time;
+    feedbackEl.textContent = "Wrong - try again next time!";
+  } else {feedbackEl.textContent = "Correct - well done keep up the great work!";
   }
-}, 1000);
-</script>
+
+  feedbackEl.setAttribute("class", "feedback");
+  setTimeout(function() {
+    feedbackEl.setAttribute("class", "feedback hide");
+  }, 1000);
+
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex === questions.length) {
+    quizEnd();
+  } else {
+    getQuestion();
+  }
+}
+
+function quizEnd() {
+  clearInterval(timerId);
+
+  var endScreenEl = document.getElementById("endscreen");
+  endScreenEl.removeAttribute("class");
+
+  var finalScoreEl = document.getElementById("results");
+  finalScoreEl.textContent = time;
+
+  questionsEl.setAttribute("class", "hide");
+}
+
+function clockTick() {
+  time--;
+  timerEl.textContent = time;
+
+  if (time <= 0) {
+    quizEnd();
+  }
+}
+
+function saveHighscore() {
+  var initials = initialsEl.value.trim();
+
+  if (initials !== "") {
+  
+    var highscores =
+      JSON.parse(window.localStorage.getItem("highscoresLst")) || [];
+
+    var newScore = {
+      score: time,
+      initials: initials
+    };
+
+    highscores.push(newScore);
+    window.localStorage.setItem("highscoresLst", JSON.stringify(highscores));
+
+    window.location.href = "scores.html";
+  }
+}
+
+function checkForEnter(event) {
+  if (event.key === "Enter") {
+    saveHighscore();
+  }
+}
+
+submitBtn.onclick = saveHighscore;
+
+startBtn.onclick = startQuiz;
+
+initialsEl.onkeyup = checkForEnter;

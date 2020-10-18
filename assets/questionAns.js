@@ -1,53 +1,28 @@
-//sitepoint.com - for sample - outlining the code first before adding in questions
-let questionLst = [
+let questions = [
     {
-        question1: "text here?",
-        answers: {
-            a: "Ans Text Here",
-            b: "Ans Text Here",
-            c: "Ans Text Here",
-            d: "Ans Text Here",
-        },
-        correctAnswer: "c"
+        title: "text here:",
+        choices:["day", "night", "big", "small"],
+        answer: "day"
     },
     {
-        question2: "text here?",
-        answers: {
-            a: "Ans Text Here",
-            b: "Ans Text Here",
-            c: "Ans Text Here",
-            d: "Ans Text Here",
-        },
-        correctAnswer: "c"
+        title: "text here:",
+        choices:["day", "night", "big", "small"],
+        answer: "night"
     },
     {
-        question3: "text here?",
-        answers: {
-            a: "Ans Text Here",
-            b: "Ans Text Here",
-            c: "Ans Text Here",
-            d: "Ans Text Here",
-        },
-        correctAnswer: "c"
+        title: "text here:",
+        choices:["day", "night", "big", "small"],
+        answer: "big"
     },
     {
-        question4: "text here?",
-        answers: {
-            a: "Ans Text Here",
-            b: "Ans Text Here",
-            c: "Ans Text Here",
-            d: "Ans Text Here",
-        },
-        correctAnswer: "c"
+        title: "text here:",
+        choices:["day", "night", "big", "small"],
+        answer: "small"
     },
     {
-        question5: "text here?",
-        answers: {
-            a: "Ans Text Here",
-            b: "Ans Text Here",
-            c: "Ans Text Here",
-            d: "Ans Text Here",
-        },
-        correctAnswer: "c"
+        title: "text here:",
+        choices:["day", "night", "big", "small"],
+        answer: "all of the above"
     },
 ];
+//sitepoint.com - for sample - outlining the code first before adding in questions - didnt work need to make a string
